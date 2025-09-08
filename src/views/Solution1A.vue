@@ -1,7 +1,7 @@
 <template>
   <div class="solution">
     <div class="header">
-      <h1>💡 Solution 1 - Kata de base Vue 3</h1>
+      <h1>💡 Solution 1a - Kata de base Vue 3</h1>
       <router-link to="/exercice1" class="btn-back">Retour à l'exercice</router-link>
     </div>
     
