@@ -37,7 +37,7 @@
           <p><strong>Âge × 3:</strong> {{ age * 3 }}</p>
           
           <!-- ✅ Appel de fonction dans l'interpolation -->
-          <p><strong>Nombre aléatoire:</strong> {{ randomNum() }}</p>
+          <p><strong>Nombre aléatoire:</strong> {{ randomNum }}</p>
           
           <!-- ✅ Bouton pour générer nouveau nombre -->
           <button @click="genererNouveauNombre">🎲 Nouveau nombre</button>
@@ -76,7 +76,7 @@
   &lt;!-- ✅ {{ }}: interpolation pour afficher les variables --&gt;
   &lt;p&gt;{{ nom }} - {{ age }} ans&lt;/p&gt;
   &lt;p&gt;Âge × 3: {{ age * 3 }}&lt;/p&gt;
-  &lt;p&gt;Aléatoire: {{ randomNum() }}&lt;/p&gt;
+  &lt;p&gt;Aléatoire: {{ randomNum}}&lt;/p&gt;
   
   &lt;!-- ✅ :src: binding d'attribut (raccourci de v-bind:src) --&gt;
   &lt;img :src="imageUrl" :alt="nom"&gt;
@@ -133,7 +133,7 @@ const genererNouveauNombre = (): void =&gt; {
           <ul>
             <li>Se met à jour automatiquement quand la variable change</li>
             <li>Peut contenir des calculs: <code>{{ age * 3 }}</code></li>
-            <li>Peut appeler des fonctions: <code>{{ randomNum() }}</code></li>
+            <li>Peut appeler des fonctions: <code>{{ randomNum }}</code></li>
           </ul>
         </div>
         
@@ -167,27 +167,26 @@ import { ref } from 'vue'
 // ✅ 2. VARIABLES RÉACTIVES - Définir l'état du composant
 const nom = ref<string>('Jean Dupont')
 const age = ref<number>(25)
-const imageUrl = ref<string>('https://via.placeholder.com/100x100/4CAF50/white?text=Vue3')
+const imageUrl = ref<string>('https://picsum.photos/100/100?random=1')
 
-// ✅ 3. FONCTIONS SIMPLES - Logique pure
-const randomNum = (): number => {
-  return Math.random()
-}
+// ✅ 3. 
 
-// ✅ 4. FONCTIONS QUI MODIFIENT L'ÉTAT - Actions utilisateur
-const changerImage = (): void => {
-  // ⚠️ IMPORTANT: Pour modifier une ref, utilise .value
-  const couleurs = ['4CAF50', 'FF5722', '2196F3', 'FF9800', '9C27B0']
-  const couleurAleatoire = couleurs[Math.floor(Math.random() * couleurs.length)]
-  const lettre = nom.value.charAt(0) || 'X'
-  
-  imageUrl.value = `https://via.placeholder.com/100x100/${couleurAleatoire}/white?text=${lettre}`
-}
+// ✅ Stocke le nombre dans une variable réactive
+const randomNum = ref<number>(Math.random())
 
+// ✅ Fonction qui met à jour la variable
 const genererNouveauNombre = (): void => {
-  // Cette fonction force juste un nouveau rendu
-  console.log('Nouveau nombre généré:', randomNum())
+  randomNum.value = Math.random()
 }
+// ✅ 4. FONCTIONS QUI MODIFIENT L'ÉTAT - Actions utilisateur
+
+const changerImage = (): void => {
+  // ✅ Génère une URL avec paramètre aléatoire
+  const randomId = Math.floor(Math.random() * 1000)
+  imageUrl.value = `https://picsum.photos/100/100?random=${randomId}`
+}
+
+
 </script>
 
 <style scoped>
