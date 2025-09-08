@@ -1,42 +1,52 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    // ✅ Sucre syntaxique : définition directe
-    { path: '/', name: 'Home', component: () => import('@/views/Home.vue') },
-    {
-      path: '/exercice1',
-      name: 'Exercice1',
-      component: () => import('@/views/Exercice1.vue'),
-    },
-    {
-      path: '/exercice2',
-      name: 'Exercice2',
-      component: () => import('@/views/Exercice2.vue'),
-    },
-    {
-      path: '/exercice3',
-      name: 'Exercice3',
-      component: () => import('@/views/Exercice3.vue'),
-    },
-    {
-      path: '/solution1',
-      name: 'Solution1',
-      component: () => import('@/views/Solution1.vue'),
-    },
-    {
-      path: '/solution2',
-      name: 'Solution2',
-      component: () => import('@/views/Solution2.vue'),
-    },
-    {
-      path: '/solution3',
-      name: 'Solution3',
-      component: () => import('@/views/Solution3.vue'),
-    },
-  ],
-});
+ const router = createRouter({
+   history: createWebHistory(),
+   routes: [
+     // ✅ Sucre syntaxique : définition directe
+     { path: '/', name: 'Home', component: () => import('@/views/Home.vue') },
+     {
+       path: '/exercice1a',
+       name: 'Exercice1a',
+       component: () => import('@/views/Exercice1A.vue'),
+     },
+     {
+       path: '/exercice1b',
+       name: 'Exercice1b',
+       component: () => import('@/views/Exercice1B.vue'),
+     },
+     {
+       path: '/exercice2',
+       name: 'Exercice2',
+       component: () => import('@/views/Exercice2.vue'),
+     },
+     {
+       path: '/exercice3',
+       name: 'Exercice3',
+       component: () => import('@/views/Exercice3.vue'),
+     },
+     {
+       path: '/solution1a',
+       name: 'Solution1a',
+       component: () => import('@/views/Solution1A.vue'),
+     },
+     {
+       path: '/solution1b',
+       name: 'Solution1b',
+       component: () => import('@/views/Solution1B.vue'),
+     },
+     {
+       path: '/solution2',
+       name: 'Solution2',
+       component: () => import('@/views/Solution2.vue'),
+     },
+     {
+       path: '/solution3',
+       name: 'Solution3',
+       component: () => import('@/views/Solution3.vue'),
+     },
+   ],
+ });
 
 
 // ================================
@@ -104,4 +114,4 @@ const router = createRouter({
 //   routes,
 // });
 
-// export default router;
+export default router;

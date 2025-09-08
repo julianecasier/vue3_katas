@@ -7,14 +7,17 @@
         
         <div class="nav-group">
           <span class="nav-label">Exercices:</span>
-          <router-link to="/exercice1" class="nav-link">Ex 1</router-link>
+           <router-link to="/exercice1a" class="nav-link">Ex 1A - Fondamentaux</router-link>
+  <router-link to="/exercice1b" class="nav-link">Ex 1B - Réactivité</router-link>
           <router-link to="/exercice2" class="nav-link">Ex 2</router-link>
           <router-link to="/exercice3" class="nav-link">Ex 3</router-link>
         </div>
         
         <div class="nav-group">
           <span class="nav-label">Solutions:</span>
-          <router-link to="/solution1" class="nav-link">Sol 1</router-link>
+          <router-link to="/solution1a" class="nav-link">Sol 1 A</router-link>
+          <router-link to="/solution1b" class="nav-link">Sol 1 B</router-link>
+
           <router-link to="/solution2" class="nav-link">Sol 2</router-link>
           <router-link to="/solution3" class="nav-link">Sol 3</router-link>
         </div>

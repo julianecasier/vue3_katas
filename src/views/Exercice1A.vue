@@ -4,7 +4,7 @@
       <h1>📝 Exercice 1 - Kata de base Vue 3</h1>
       <router-link to="/solution1" class="btn-solution">Voir la solution</router-link>
     </div>
-    
+    <h2>📝 Exercice 1A - Fondamentaux Vue 3 (ref, v-model, binding)</h2>
     <div class="instructions">
       <h2>🎯 Instructions :</h2>
       <ol>
